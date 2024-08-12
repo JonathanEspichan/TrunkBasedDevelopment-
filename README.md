@@ -1,25 +1,27 @@
-# TrunkBasedDevelopment-
+# TrunkBasedDevelopment-Hotfix 👨‍💻
 
-La rama main es la rama principal de este proyecto y siempre debe estar en un estado de producción estable. Ningún cambio debe ser empujado directamente a main; todos los cambios deben ser integrados mediante pull requests después de ser revisados y aprobados.
+Las ramas hotfix/ se utilizan para aplicar correcciones urgentes y críticas en producción. Estas ramas deben ser creadas desde main y fusionadas tan pronto como la corrección esté validada.
 
-## Reglas para main
+## Reglas de Denominación
 
-- *Estado Estable*: main debe estar siempre en un estado que pueda desplegarse en producción.
-- *Integraciones*: Todas las integraciones a main deben pasar por un proceso de revisión de código.
-- *Pruebas*: Todos los cambios deben pasar pruebas automatizadas antes de fusionarse.
-- *Etiquetado*: Cada vez que se libera una nueva versión, se debe crear una etiqueta (tag) en main.
+- *Regla de Denominación*: hotfix/descripcion-corta-bug
+- *Ejemplos*: 
+  - hotfix/correccion-vulnerabilidad-ssl
+  - hotfix/arreglo-error-login
 
 ## Flujos de Trabajo
 
-1. *Fusión de Ramas*:
-   - Las ramas feature/ y hotfix/ se fusionan en main mediante pull requests.
-   - Se debe realizar una revisión de código y pasar todas las pruebas automatizadas antes de la fusión.
+1. *Creación de Ramas*:
+   - Crea la rama desde main cuando se detecte un error crítico que necesite una corrección inmediata.
 
-2. *Lanzamientos*:
-   - Después de fusionar una rama release/ en main, se debe etiquetar la versión correspondiente.
-   - Las ramas release/ deben eliminarse después de la fusión y el etiquetado.
+2. *Integración*:
+   - Fusiona la rama en main tan pronto como se valide la corrección.
+   - Considera fusionar también en otras ramas relevantes (como release/ si es aplicable).
+
+3. *Eliminación de Ramas*:
+   - Después de fusionar la rama hotfix/ en main, elimina la rama para mantener el repositorio organizado.
 
 ## Buenas Prácticas
 
-- *Revisión de Código*: Todas las integraciones deben pasar por un proceso de revisión rigurosa.
-- *Pruebas Automatizadas*: Utiliza integración continua para asegurar la calidad del código antes de fusionar.
+- *Corrección Rápida*: Las ramas hotfix/ deben corregir problemas críticos de manera rápida y eficiente.
+- *Validación Extensiva*: Asegúrate de que la corrección ha sido validada en un entorno de pruebas antes de fusionar.
